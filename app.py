@@ -14,6 +14,8 @@ debe tener opcion para terminar el programa
 
 """
 
+from db import db
+
 
 def showMenu():
     print()
