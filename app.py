@@ -10,6 +10,7 @@ debe tener opcion para terminar el programa
 
  0:: agregar un nuevo numero
  1:: mostrar la suma
+ 2:: mostrar lista de numeros
 -1:: exit
 
 """
@@ -23,6 +24,7 @@ def showMenu():
     optionDict = {
         " 0": "agregar un nuevo numero",
         " 1": "mostrar la suma",
+        " 2": "mostrar la lista de numeros",
         "-1": "exit",
     }
     for option, value in optionDict.items():
@@ -30,7 +32,25 @@ def showMenu():
     print()
 
 
-result = 0
+def showResult(database):
+    result = 0
+    showNumberList()
+    for number in database:
+        result += number
+    print(f"result-> {result}")
+
+
+def inputNumber():
+    print()
+    number = int(input("positive number: "))
+    db.append(number)
+    showNumberList()
+
+
+def showNumberList():
+    print()
+    print(f"list-> {db}")
+
 
 while True:
     showMenu()
@@ -38,8 +58,11 @@ while True:
     if option == -1:
         break
     elif option == 0:
-        print("agregar numero...")
+        inputNumber()
     elif option == 1:
-        print(f"result-> {result}")
+        showResult(db)
+        break
+    elif option == 2:
+        showNumberList()
     else:
         print("app is working...")
