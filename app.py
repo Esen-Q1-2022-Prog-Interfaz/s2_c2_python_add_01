@@ -13,9 +13,25 @@ debe tener opcion para terminar el programa
 -1:: exit
 
 """
+
+
+def showMenu():
+    print()
+    print()
+    optionDict = {
+        " 0": "agregar un nuevo numero",
+        " 1": "mostrar la suma",
+        "-1": "exit",
+    }
+    for option, value in optionDict.items():
+        print(f"{option}:: {value}")
+    print()
+
+
 result = 0
 
 while True:
+    showMenu()
     option = int(input("option: "))
     if option == -1:
         break
